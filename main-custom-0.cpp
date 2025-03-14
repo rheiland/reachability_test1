@@ -175,7 +175,6 @@ int main( int argc, char* argv[] )
 	}
 	
     // custom time output intervals
-    static bool test_custom_time = true;
     double sim_time1 = parameters.doubles("sim_time1");
     double intervals_time1 = parameters.doubles("intervals_time1");
 
@@ -185,16 +184,7 @@ int main( int argc, char* argv[] )
 	{		
 		while( PhysiCell_globals.current_time < PhysiCell_settings.max_time + 0.1*diffusion_dt )
 		{
-            if (test_custom_time)
-            {
-                // test for custom time output intervals (could put this inside )
-                if (PhysiCell_globals.current_time >= sim_time1)
-                {
-				    PhysiCell_settings.full_save_interval = intervals_time1;
-				    PhysiCell_settings.SVG_save_interval = intervals_time1;
-                    test_custom_time = false;
-                }
-            }
+
 
 			// save data if it's time. 
 			if( fabs( PhysiCell_globals.current_time - PhysiCell_globals.next_full_save_time ) < 0.01 * diffusion_dt )
@@ -213,7 +203,14 @@ int main( int argc, char* argv[] )
 				}
 				
 				PhysiCell_globals.full_output_index++; 
-				PhysiCell_globals.next_full_save_time += PhysiCell_settings.full_save_interval;
+				// PhysiCell_globals.next_full_save_time += PhysiCell_settings.full_save_interval;
+
+                // test for custom time output intervals (could put this inside )
+                if (PhysiCell_globals.current_time >= sim_time1)
+                {
+				    PhysiCell_settings.full_save_interval = intervals_time1;
+                }
+                PhysiCell_globals.next_full_save_time += PhysiCell_settings.full_save_interval;
 			}
 			
 			// save SVG plot if it's time
@@ -225,6 +222,13 @@ int main( int argc, char* argv[] )
 					SVG_plot( filename , microenvironment, 0.0 , PhysiCell_globals.current_time, cell_coloring_function, substrate_coloring_function);
 
 					PhysiCell_globals.SVG_output_index++; 
+					// PhysiCell_globals.next_SVG_save_time  += PhysiCell_settings.SVG_save_interval;
+
+                    // test for custom time output intervals (could put this inside )
+                    if (PhysiCell_globals.current_time >= sim_time1)
+                    {
+                        PhysiCell_settings.SVG_save_interval = intervals_time1;
+                    }
 					PhysiCell_globals.next_SVG_save_time  += PhysiCell_settings.SVG_save_interval;
 				}
 			}
