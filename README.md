@@ -5,7 +5,7 @@
 * includes `/studio`  (by running `python beta/get_studio.py`)
 
 ## Custom output intervals
-* add user params to make this possible
+* add user params to make this possible (`config/PhysiCell_settings.xml` and a simpler `test1.xml`)
 * edit main.cpp to use them
 
 After compiling the executable model (with a modified `main.cpp`) and assuming all Studio dependencies are met, you can run it:
