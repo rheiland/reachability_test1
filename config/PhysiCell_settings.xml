@@ -23,7 +23,7 @@
     </domain>
 
     <overall>
-        <max_time units="min">7200.0</max_time>
+        <max_time units="min">4320.0</max_time>
         <time_units>min</time_units>
         <space_units>micron</space_units>
         <dt_diffusion units="min">0.01</dt_diffusion>
@@ -640,7 +640,7 @@
 
     <user_parameters>
         <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">0</number_of_cells>
-        <sim_time1 type="double" units="mins" description="time at which output intervals change">1440</sim_time1>
+        <sim_time1 type="double" units="mins" description="time at which output intervals change">1380</sim_time1>
         <intervals_time1 type="double" units="mins" description="new value of output intervals">720</intervals_time1>
     </user_parameters>
 </PhysiCell_settings>
