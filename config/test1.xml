@@ -23,7 +23,7 @@
     </domain>
 
     <overall>
-        <max_time units="min">7200.0</max_time>
+        <max_time units="min">60.0</max_time>
         <time_units>min</time_units>
         <space_units>micron</space_units>
         <dt_diffusion units="min">0.01</dt_diffusion>
@@ -38,11 +38,11 @@
     <save>
         <folder>outputs/tumor_immune_base</folder>
         <full_data>
-            <interval units="min">60</interval>
+            <interval units="min">1</interval>
             <enable>true</enable>
         </full_data>
         <SVG>
-            <interval units="min">60</interval>
+            <interval units="min">1</interval>
             <enable>true</enable>
             <plot_substrate enabled="false" limits="false">
                 <substrate>oxygen</substrate>
@@ -640,7 +640,7 @@
 
     <user_parameters>
         <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">0</number_of_cells>
-        <sim_time1 type="double" units="mins" description="time at which output intervals change">1440</sim_time1>
-        <intervals_time1 type="double" units="mins" description="new value of output intervals">720</intervals_time1>
+        <sim_time1 type="double" units="mins" description="time at which output intervals change">30</sim_time1>
+        <intervals_time1 type="double" units="mins" description="new value of output intervals">5</intervals_time1>
     </user_parameters>
 </PhysiCell_settings>
