@@ -11,7 +11,10 @@
 After compiling the executable model (with a modified `main.cpp`) and assuming all Studio dependencies are met, you can run it:
   ```
   make
+  # run full model
   python studio/bin/studio.py
+  # or, run a config file just to test the custom output intervals
+  python studio/bin/studio.py -c config/test1.xml
   ```
 
 ## Experiment with reproducibility, replicates, permuting ICs
